@@ -1,0 +1,53 @@
+.customCheckbox {
+  width: 50%;
+}
+
+.containerFullHeight {
+  min-height: 100vh;
+}
+
+.loginRow {
+  max-width: 960px; 
+}
+
+@media (min-width: 992px) {
+  .containerFullHeight {
+    width: 50%;
+    padding: 80px;
+    background: white;
+    border-radius: 10px;
+    height: 90%;
+  }
+  .loginImage {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("../../../public/login_bg.jpg"); 
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    transform: scaleX(-1);
+}
+
+}
+
+@media (max-width: 991.98px) {
+  .containerFullHeight {
+    justify-content: center;
+  }
+
+  .loginImage {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("../../../public/login_bg.jpg");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+    z-index: -1;
+  }
+}

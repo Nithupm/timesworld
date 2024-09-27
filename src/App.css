@@ -36,3 +36,44 @@
     transform: rotate(360deg);
   }
 }
+
+/* App.css */
+
+.homepage {
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+}
+
+.country-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.country-card {
+  width: 48%;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.load-more-btn {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .country-card {
+      width: 100%;
+  }
+}
