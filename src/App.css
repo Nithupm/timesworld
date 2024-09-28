@@ -72,6 +72,7 @@ header {
 .continent{
   cursor: pointer !important;
 }
+
 .title::after{
   content: "";
   position: absolute;
@@ -95,9 +96,6 @@ header {
 @media (max-width: 768px) {
   .country-card {
       width: 100%;
-  }
-  .slick-prev {
-    z-index: 1 !important;
   }
  
   .countryName{
