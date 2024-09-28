@@ -22,7 +22,7 @@ const HomePage = () => {
             <p
               key={option}
               onClick={() => setSelectedOption(option)}
-              className={`cursor-pointer ${
+              className={` continent ${
                 selectedOption === option
                   ? "fw-bold text-decoration-underline text-dark"
                   : "text-muted"
@@ -40,19 +40,19 @@ const HomePage = () => {
             />
             <Navbar.Collapse in={showMenu} id="basic-navbar-nav">
               <Nav className="ml-auto">
-                <Nav.Link href="#home">All</Nav.Link>
-                <Nav.Link href="#features">Asia</Nav.Link>
-                <Nav.Link href="#pricing">Europe</Nav.Link>
+                <Nav.Link href="#home" onClick={() => setSelectedOption("All")}>All</Nav.Link>
+                <Nav.Link href="#features" onClick={() => setSelectedOption("Asia")}>Asia</Nav.Link>
+                <Nav.Link href="#pricing" onClick={() => setSelectedOption("Europe")}>Europe</Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Navbar>
         </div>
       </div>
       <header>
-        <h1>WELCOME</h1>
+        <h1 className="title position-relative">WELCOME</h1>
       </header>
       <SliderComponent />
-      <CountryList />
+      <CountryList filter={selectedOption} />
     </div>
   );
 };

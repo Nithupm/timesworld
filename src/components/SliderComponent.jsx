@@ -112,7 +112,7 @@ const SliderComponent = () => {
   );
 };
 
-// Custom next arrow
+
 const SampleNextArrow = (props) => {
   const { className, style, onClick } = props;
   return (
@@ -124,7 +124,7 @@ const SampleNextArrow = (props) => {
   );
 };
 
-// Custom previous arrow
+
 const SamplePrevArrow = (props) => {
   const { className, style, onClick } = props;
   return (

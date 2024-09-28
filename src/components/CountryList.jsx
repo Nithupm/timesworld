@@ -1,45 +1,45 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchCountries } from '../actions/countryActions';
 
-const CountryList = () => {
-  const [countries, setCountries] = useState([]);
+const CountryList = ({ filter }) => {
+  const dispatch = useDispatch();
+  const countriesData = useSelector((state) => state.countries);
+  const { loading, countries, error } = countriesData;
+
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
   const itemsPerPage = 10;
 
   useEffect(() => {
-    fetchCountries();
-  }, []);
+    dispatch(fetchCountries());
+  }, [dispatch]);
 
-  const fetchCountries = async () => {
-    try {
-      const response = await axios.get(
-        `https://restcountries.com/v2/all?fields=name,region,flag`
-      );
-      setCountries(response.data);
-    } catch (error) {
-      console.error("Error fetching countries", error);
-    }
-  };
+  const filteredCountries = countries.filter(country => {
+    if (filter === "All") return true;
+    return country.region === filter;
+  });
 
   const loadMore = () => {
-    if (page * itemsPerPage >= countries.length) {
+    if (page * itemsPerPage >= filteredCountries.length) {
       setHasMore(false);
     } else {
       setPage((prevPage) => prevPage + 1);
     }
   };
 
-  const displayedCountries = countries.slice(0, page * itemsPerPage);
+  const displayedCountries = filteredCountries.slice(0, page * itemsPerPage);
 
   return (
     <div>
+      {loading && <p>Loading...</p>}
+      {error && <p>{error}</p>}
       <div className="country-list">
         {displayedCountries.map((country) => (
           <div className="country-card d-flex align-items-center gap-4" key={country.alpha3Code}>
-            <img src={country.flag} style={{width:'80px', height:'60px'}}/>
+            <img src={country.flag} style={{ width: '80px', height: '60px' }} alt={country.name} />
             <div className="d-flex flex-column align-items-start">
-              <h3>{country.name}</h3>
+              <h5>{country.name}</h5>
               <p>{country.region}</p>
             </div>
           </div>
