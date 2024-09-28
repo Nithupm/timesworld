@@ -99,6 +99,7 @@ header {
   .slick-prev {
     z-index: 1 !important;
   }
+ 
   .countryName{
     font-size: 16px !important;
 
@@ -120,5 +121,11 @@ header {
     background: black;
     top: -9px;
     left: 0;
+  }
+}
+
+@media (max-width: 600px){
+  .slide-content{
+    width: 100% !important;
   }
 }
