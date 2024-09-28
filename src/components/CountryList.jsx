@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCountries } from '../actions/countryActions';
+import '../App.css'
 
 const CountryList = ({ filter }) => {
   const dispatch = useDispatch();
@@ -39,8 +40,8 @@ const CountryList = ({ filter }) => {
           <div className="country-card d-flex align-items-center gap-4" key={country.alpha3Code}>
             <img src={country.flag} style={{ width: '80px', height: '60px' }} alt={country.name} />
             <div className="d-flex flex-column align-items-start">
-              <h5>{country.name}</h5>
-              <p>{country.region}</p>
+              <h5 className='countryName text-start'>{country.name}</h5>
+              <p className='countryRegion'>{country.region}</p>
             </div>
           </div>
         ))}

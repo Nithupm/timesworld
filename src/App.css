@@ -99,6 +99,10 @@ header {
   .slick-prev {
     z-index: 1 !important;
   }
+  .countryName{
+    font-size: 16px !important;
+
+  }
   .title::after{
     content: "";
     position: absolute;
