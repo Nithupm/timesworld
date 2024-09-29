@@ -1,5 +1,6 @@
 .customCheckbox {
   width: 50%;
+  white-space: nowrap;
 }
 
 .containerFullHeight {
@@ -9,6 +10,7 @@
 .loginRow {
   max-width: 960px; 
 }
+
 
 @media (min-width: 992px) {
   .containerFullHeight {

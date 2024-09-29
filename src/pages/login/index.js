@@ -1,11 +1,14 @@
-import React from "react";
+import React, {useState} from "react";
 import styles from "./login.module.css";
 import { Container, Form, Button, Row, Col } from "react-bootstrap";
 import { Google, Facebook, Linkedin, Twitter } from "react-bootstrap-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons';
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom"; 
 
 const LoginPage = () => {
+  const [showPassword, setShowPassword] = useState(false);
   const {
     register,
     handleSubmit,
@@ -17,6 +20,10 @@ const LoginPage = () => {
   const onSubmit = (data) => {
     console.log(data);
     navigate("/home");
+  };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
   };
 
   const usernameValidation = {
@@ -62,11 +69,17 @@ const LoginPage = () => {
                 )}
               </Form.Group>
 
-              <Form.Group className="mb-3">
+              <Form.Group className="mb-3 position-relative">
+                
                 <Form.Control
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   placeholder="Password"
                   {...register("password", passwordValidation)}
+                />
+                <FontAwesomeIcon
+                  icon={showPassword ? faEyeSlash : faEye}
+                  onClick={togglePasswordVisibility}
+                  className="position-absolute passIcon"
                 />
                 {errors.password && (
                   <p className="text-danger text-start">{errors.password.message}</p>
