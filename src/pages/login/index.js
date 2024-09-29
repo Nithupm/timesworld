@@ -47,7 +47,7 @@ const LoginPage = () => {
 
             <div className="text-center lg:text-start mb-4">
               <p>
-                New user? <a href="#">Create an account</a>
+                New user? <a href="#" className="text-decoration-none">Create an account</a>
               </p>
             </div>
             <Form onSubmit={handleSubmit(onSubmit)}>
@@ -58,7 +58,7 @@ const LoginPage = () => {
                   {...register("username", usernameValidation)}
                 />
                 {errors.username && (
-                  <p className="text-danger">{errors.username.message}</p>
+                  <p className="text-danger text-start">{errors.username.message}</p>
                 )}
               </Form.Group>
 
@@ -69,7 +69,7 @@ const LoginPage = () => {
                   {...register("password", passwordValidation)}
                 />
                 {errors.password && (
-                  <p className="text-danger">{errors.password.message}</p>
+                  <p className="text-danger text-start">{errors.password.message}</p>
                 )}
               </Form.Group>
 
