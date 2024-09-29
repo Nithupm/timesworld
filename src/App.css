@@ -111,9 +111,14 @@ header {
   top: 13px;
   right: 0;
 }
-/* .slick-prev ,.slick-next {
-  top: 90% !important;
-} */
+
+.footerText{
+  color:#3D3D3D;
+}
+
+.footer{
+  margin-top: 100px;
+}
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -124,6 +129,9 @@ header {
   .countryName{
     font-size: 16px !important;
 
+  }
+  .footerText{
+  font-size: 14px;
   }
   .title::after{
     content: "";

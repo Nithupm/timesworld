@@ -4,6 +4,7 @@ import SliderComponent from "../../components/SliderComponent";
 import CountryList from "../../components/CountryList";
 import { Navbar, Nav } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Footer from "../../components/Footer";
 
 const HomePage = () => {
   const [selectedOption, setSelectedOption] = useState("All");
@@ -53,6 +54,7 @@ const HomePage = () => {
       </header>
       <SliderComponent />
       <CountryList filter={selectedOption} />
+      <Footer/>
     </div>
   );
 };
