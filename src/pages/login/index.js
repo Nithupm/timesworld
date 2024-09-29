@@ -85,9 +85,9 @@ const LoginPage = () => {
                 Sign In
               </Button>
 
-              <p className="text-center mb-5 mt-4">Or Sign In With</p>
+              <p className="text-center signIn position-relative mb-5 mt-4">Or Sign In With</p>
 
-              <Row className="d-flex justify-content-around mt-4">
+              <Row className="d-flex justify-content-center mt-4">
                 <Col xs="auto">
                   <Button variant="outline-secondary">
                     <Google />
